@@ -1,0 +1,28 @@
+HTTP1
+
+One at a Time:
+In HTTP/1.1, requests and responses are handled one at a time. This means that if a webpage has many resources, such as images, CSS files, and JavaScript files, the browser has to send separate requests for each resource. It can slow down the webpage loading time because the browser has to wait for each response before sending the next request.
+
+Multiple Connections:
+To overcome the limitation of handling requests one at a time, HTTP/1.1 uses multiple connections. Each connection can retrieve one resource at a time. For example, if a webpage has five images, the browser can establish five connections to download those images simultaneously. However, establishing and managing multiple connections can be inefficient and increase latency.
+
+Compression and Minification:
+To reduce the size of transferred data and improve performance, HTTP/1.1 supports compression and minification techniques. Compression compresses the data on the server and decompresses it on the client side, reducing the amount of data transferred. Minification removes unnecessary characters from code, such as whitespace and comments, making the files smaller. These techniques help, but they have limitations in the context of HTTP/1.1's sequential processing.
+
+-------------------------------------------------------------------------------
+hhtp2
+
+HTTP/2: Enhanced Performance and Efficiency
+HTTP/2, introduced in 2015, aims to improve the shortcomings of HTTP/1.1 and make the web faster. It brings several significant changes to the protocol to enhance performance. Let's take a look at the key features of HTTP/2:
+
+Multiplexing:
+One of the major improvements in HTTP/2 is multiplexing. Unlike HTTP/1.1, which handles requests and responses one at a time, HTTP/2 allows multiple requests and responses to be sent over a single connection simultaneously. This means the browser can request and receive multiple resources in parallel, speeding up the webpage loading process.
+
+Binary Protocol:
+HTTP/2 uses a binary protocol instead of the text-based format of HTTP/1.1. This change makes the protocol more efficient in terms of parsing and reduces the overhead associated with text-based protocols. However, it also means that inspecting network traffic using tools like Wireshark becomes more challenging.
+
+Server Push:
+HTTP/2 introduces server push, which is a game-changer for performance. With server push, the server can proactively send resources to the client before they are requested. For example, if a webpage requires certain CSS and JavaScript files, the server can push those files to the client along with the initial response. This eliminates the need for additional round trips, further improving performance.
+
+Header Compression:
+In HTTP/2, header compression is improved. Headers contain information about the requests and responses, and in HTTP/1.1, they were sent as text with each request and response. HTTP/2 compresses headers using a technique called HPACK, reducing the overhead and improving bandwidth usage.
